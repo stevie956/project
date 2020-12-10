@@ -1,2 +1,1 @@
 # project
-My Sei Project
