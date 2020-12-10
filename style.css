@@ -1,4 +1,21 @@
-.container {
+body {
     font-family: 'Times New Roman', Times, serif;
+}
+
+.container {
     text-align: center;
+}
+.layout {
+    display: flex;
+    flex-direction: row;
+
+}
+
+.column {
+    flex: 1 0 33.33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12%  12%;
+    background-color: rgb(9, 207, 85);
 }
