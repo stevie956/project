@@ -2,8 +2,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Stevie Kelly">
-  <meta name="description" content="A calcualtor game">
+  <meta name="author" content="Stevie-Kelly">
+  <meta name="description" content="A-scoreboard">
   <title>Document</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" media="screen" href="./style.css"></link>
@@ -14,17 +14,38 @@
     <div class="container">
       <h1>Stevie's Darts</h1>
       <p>"You do the chuckin, We do the countin!"</p>
+    </div>
       <div class="layout">
         <div class="column column--score column--active">
           <h5 class="Player-Name">Player 1</h5>
           <h2 class="score">501</h2>
           <div class="column">
             <button id="js-start" class="button">Restart</button>
+          <div class="num-pad">
+            <input class="num-pad__display" readonly/>
+            <button class="num-pad__button num-pad__--numeric">1</button>
+            <button class="num-pad__button num-pad__--numeric">2</button>
+            <button class="num-pad__button num-pad__--numeric">3</button>
+            <button class="num-pad__button num-pad__--numeric">4</button>
+            <button class="num-pad__button num-pad__--numeric">5</button>
+            <button class="num-pad__button num-pad__--numeric">6</button>
+            <button class="num-pad__button num-pad__--numeric">7</button>
+            <button class="num-pad__button num-pad__--numeric">8</button>
+            <button class="num-pad__button num-pad__--numeric">9</button>
+            <button class="num-pad__button num-pad__--clear">Clear</button>
+            <button class="num-pad__button num-pad__--numeric">0</button>
+            <button class="num-pad__button num-pad__--delete">Delete</button>
+            <button class="num-pad__button num-pad__--submit">Submit</button>
+           </div>
+          </div>
+          <div class="column column--score">
+            <h5 class="player-name">Player 2</h5>
+            <h2 class="score">501</h2>
           </div>
         </div>
      </div>
     </div>
-   </div>
+  
    <script src="app.js"></script>
 </body>
 </html>
