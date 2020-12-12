@@ -14,7 +14,7 @@ $('.num-pad__button--clear').on('click', function() {
     $('.num-pad__display').val('');
 });
 // to call delete button to reset to 0
-$('.num-pad__button--delete').on('click', function() {
+$('.num-pad__--delete').on('click', function() {
     var score = $('.num-pad__display').val();
     if(score) {
       score = score.toString().substring(0, score.length - 1);
@@ -25,7 +25,11 @@ $('.num-pad__button--delete').on('click', function() {
   $('.num-pad__button--submit').on('click', function() {
     var score = $('.num-pad__display').val();
 // if a score is entered greater than 180 display an alert
-    if(score > 180) {
+   /* if(score > 180) {
         alert('Score cannot be higher than 180');
         return;
-      }};
+      }});*/
+
+      $("#num-pad__button").click(function() {
+        $("#num-pad").append($(this).val());
+        })};

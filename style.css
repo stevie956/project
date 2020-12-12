@@ -1,13 +1,17 @@
 body {
     font-family: 'Times New Roman', Times, serif;
+    box-sizing: border-box;
 }
 
 .container {
-    text-align: center;
+    
+    background-color: black;
+    color:  rgb(9, 207, 85);
 }
 .layout {
     display: flex;
     flex-direction: row;
+    min-height: 100vh;
 
 }
 
@@ -19,3 +23,9 @@ body {
     padding: 12%  12%;
     background-color: rgb(9, 207, 85);
 }
+
+.num-pad__display {
+    width: 100%;
+    margin-bottom: 15px;
+    line-height: 2;
+  }
