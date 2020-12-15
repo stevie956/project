@@ -1,70 +1,71 @@
+
 body {
-    font-family: 'Times New Roman', Times, serif;
-    background-color: white;
-    text-align: center;
-   
+  font-family: 'Times New Roman', Times, serif;
+  background-color: white;
+  text-align: center;
+ 
 }
 
 .container {
-    
-    background-color: black;
-    color:white;
+  
+  background-color: black;
+  color:white;
 }
 .layout {
-    display: flex;
-    flex-direction: row;
-    min-height: 100px;
+  display: flex;
+  flex-direction: row;
+  min-height: 100px;
 
 }
 
 .column {
-    flex: 33.33% 1 0;
-    display: flex;
-    flex-direction: column;
-    background-color:white
-    align-items: center;
-    padding: 25px 15px;
-    position: relative;
-   
-}
-  .column-one {
-    background-color: rgb(20, 214, 20);
-  }
-
-  .column-two {
-    background-color:white;
-  }
-  .column-three {
-    background-color: orange;
-  }
-.player-name {
-    margin-bottom: 15px;
-}
+  flex: 33.33% 1 0;
+  display: flex;
+  flex-direction: column;
+  background-color:white
+  align-items: center;
+  padding: 25px 15px;
+  position: relative;
  
-.num-pad {
-    padding-top: 15px;
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr;
-    
-  }
-  .num-pad__display {
-    width: 100%;
-    margin-bottom: 10px;
-    line-height: 2;
-  }
-    .num-pad__submit {
-        width: 300%;
-        margin-top: 25px;
-        background-color:red;
-        color: #fff;
-        position: center;
-      }
-   .button {
-        background-color: green;
-        color: white;
-        margin-bottom: 15px;
-    }
+}
+.column-one {
+  background-color: rgb(20, 214, 20);
+}
 
-    .num-pad__numeric {
-        position: center;
+.column-two {
+  background-color:white;
+}
+.column-three {
+  background-color: orange;
+}
+.player-name {
+  margin-bottom: 15px;
+}
+
+.num-pad {
+  padding-top: 15px;
+ display: grid;
+ grid-template-columns: 1fr 1fr 1fr;
+  
+}
+.num-pad__display {
+  width: 100%;
+  margin-bottom: 10px;
+  line-height: 2;
+}
+  .num-pad__submit {
+      width: 300%;
+      margin-top: 25px;
+      background-color:red;
+      color: #fff;
+      position: center;
     }
+ .button {
+      background-color: green;
+      color: white;
+      margin-bottom: 15px;
+  }
+
+  .num-pad__numeric {
+      position: center;
+  }

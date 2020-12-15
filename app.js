@@ -10,15 +10,15 @@ $(".num-pad__display").val("");
 //jquery number pad to string the numbers together on the display
 $(".num-pad__numeric").on("click", (e) => {
   console.log(e.target.innerHTML);
-  const currentValue = $("#test").val();
-  $("#test").val(currentValue + e.target.innerHTML);
+  const currentValue = $("#point").val();
+  $("#point").val(currentValue + e.target.innerHTML);
   // $('.num-pad__display').val($('.num-pad__display').val() + (this).text());
 });
-//jquery the clear button
+//jquery the clear button to reset display to zero
 $(".num-pad__clear").on("click", function () {
   $(".num-pad__display").val("");
 });
-// to call delete button to reset to 0
+// to call delete button to reset to subtract onr chararcter from the display.
 $(".num-pad__delete").on("click", function () {
   var score = $(".num-pad__display").val();
   if (score) {
@@ -28,11 +28,12 @@ $(".num-pad__delete").on("click", function () {
 });
 //submit the score on display to minus score from column
 $(".num-pad__submit").on("click", function () {
-  let score = $("#test").val();
+  let score = $("#point").val();
   if (isFirstPlayerTurn) {
     let firstPlayerCurrentScore = parseInt($("#firstPlayerScore").text());
     $("#firstPlayerScore").text(firstPlayerCurrentScore - score);
     isFirstPlayerTurn = false;
+ //i had a problem where when scores were submitted it was substracting from both players simultaneously do needed the "else" statement
   } else {
   let secondPlayerCurrentScore = parseInt($("#secondPlayerScore").text());
   $("#secondPlayerScore").text(secondPlayerCurrentScore - score);
