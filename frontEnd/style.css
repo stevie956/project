@@ -22,7 +22,7 @@ body {
   flex: 33.33% 1 0;
   display: flex;
   flex-direction: column;
-  background-color:white
+  background-color:white;
   align-items: center;
   padding: 25px 15px;
   position: relative;
