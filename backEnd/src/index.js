@@ -11,15 +11,15 @@ mongoose.connect("mongodb://localhost:27017/dartsScoreboard", {
 // Initialise app object
 const app = express();
 // app port
-const port = 3207;
+const port = 3027;
 // read json
 app.use(express.json());
 //use cors to read from chrome
 app.use(cors());
 
-app.use("/match", matchRouter);
+app.use("/api/match", matchRouter);
 
 
 app.listen(port, () => 
-     console.log(`Fruit app is listening at http://localhost:${port}`)
+     console.log(`Darts port is listening at http://localhost:${port}`)
      );

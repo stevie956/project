@@ -1,44 +1,60 @@
 // create form
 const form = `
-<form>
+<form id="CreateGame">
 <h1>Create A Game</h1>
     <div class="form-group">
     <div class="form-group">
     <label for="name">PlayerOne</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter a players name" name="Player One">
+    <input type="text" class="form-control"  placeholder="Enter a players name" name="playerOne">
     </div>
     <label for="name">Nationality</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter a players nationality" name="NationalityOne">
+    <input type="text" class="form-control"  placeholder="Enter a players nationality" name="nationalityOne">
     </div>
     <div class="form-group">
     <div class="form-group">
     <label for="name">PlayerTwo</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter a players name" name="Player Two">
+    <input type="text" class="form-control"  placeholder="Enter a players name" name="playerTwo">
     </div>
     <label for="name">Nationality</label>
-    <input type="text" class="form-control" id="name" placeholder="Enter a players nationality" name="NationalityTwo">
+    <input type="text" class="form-control"  placeholder="Enter a players nationality" name="nationalityTwo">
     </div>
-    <button type="button" id="create-player"  class="btn btn-primary">Create Player One</button>
-    <button type="button" id="create-player"  class="btn btn-primary">Create Player Two</button>
+    <button type="submit" id="create-match" class="btn btn-primary">Let'sPlay!</button>
+    
 </form>
 `;
-// Construct body
-const requestBody = {
-    name: $("#name").val(),
-    nationality: $("#nationality").val(),
-    matchId: $("#matches").val(),
-  };
-  // Make a post request to the server to create a game
-  const response = await $.ajax({
-    type: "POST",
+//creating a get req
+function createGameForm() {
+  /*const matchResponse = $.ajax({
+    type: "GET",
     url: "/match/create",
-    contentType: "application/json",
-    data: JSON.stringify(requestBody),
   });
+  console.log("Get req working!");*/
 
-    // Create a pop up alert in the UI to inform the user that fruit was created
+  // Event listener for the create button
+  $(document).on("submit", "#CreateGame", async (e) => {
+    e.preventDefault();
+    // Construct body
+    const requestBody = {
+      nameOne: $("input[name='playerOne']").val(),
+      nationalityOne: $("input[name='nationalityOne']").val(),
+      nameTwo: $("input[name='playerTwo']").val(),
+      nationalityTwo: $("input[name='nationalityTwo']").val(),
+    
+    };
+    // Make a post request to the server to create a game
+    const response = await $.ajax({
+      type: "POST",
+      url: "/api/match/create",
+      contentType: "application/json",
+      data: JSON.stringify(requestBody),
+    });
+   
+    console.log("match created");
+    // Create a pop up alert in the UI to inform the user that game was created
     window.alert("Game Created!");
+   });
+   
+  return form;
+};
 
-    return form;
-
-    export default createGameForm;
+export default createGameForm;

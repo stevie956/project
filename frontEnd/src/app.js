@@ -1,3 +1,9 @@
+import "regenerator-runtime/runtime";
+
+import createGameForm from "./createGameForm";
+
+$("body").prepend(createGameForm());
+
 let isFirstPlayerTurn = true;
 
 $("#js-start").on("click", function () {
@@ -47,3 +53,6 @@ $(".num-pad__submit").on("click", function () {
   $("#num-pad__button").click(function () {
     $("#num-pad").append($(this).val());
   });
+
+
+
