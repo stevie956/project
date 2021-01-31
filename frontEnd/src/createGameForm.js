@@ -4,6 +4,10 @@ const form = `
 <h1>Create A Game</h1>
     <div class="form-group">
     <div class="form-group">
+    <label for="matchId"></label>
+    <input type="text" class="form-control" id="matchId" placeholder="Enter match Id" name="matchId">
+  </div>
+    <div class="form-group">
     <label for="name">PlayerOne</label>
     <input type="text" class="form-control"  placeholder="Enter a players name" name="playerOne">
     </div>
