@@ -28,32 +28,41 @@
         <div class="column column-one">
           <h5 class="Player-Name">Player 1</h5>
           <h2 id="firstPlayerScore" class="score">501</h2>
+          <div id="p1_score_history"></div>
+        </div>
+
+
+
           <div class="column column-two">
             <button id="js-start" class="button">Restart</button>
             <input id="point" class="num-pad__display" readonly/>
             <div class="num-pad">
-            <button class="num-pad__button num-pad__numeric">1</button>
-            <button class="num-pad__button num-pad__numeric">2</button>
-            <button class="num-pad__button num-pad__numeric">3</button>
-            <button class="num-pad__button num-pad__numeric">4</button>
-            <button class="num-pad__button num-pad__numeric">5</button>
-            <button class="num-pad__button num-pad__numeric">6</button>
-            <button class="num-pad__button num-pad__numeric">7</button>
-            <button class="num-pad__button num-pad__numeric">8</button>
-            <button class="num-pad__button num-pad__numeric">9</button>
-            <button class="num-pad__button num-pad__clear">Clear</button>
-            <button class="num-pad__button num-pad__numeric">0</button>
-            <button class="num-pad__button num-pad__delete">Delete</button>
-            <button class="num-pad__button num-pad__submit">Submit</button>
-           </div>
+              <button class="num-pad__button num-pad__numeric">1</button>
+              <button class="num-pad__button num-pad__numeric">2</button>
+              <button class="num-pad__button num-pad__numeric">3</button>
+              <button class="num-pad__button num-pad__numeric">4</button>
+              <button class="num-pad__button num-pad__numeric">5</button>
+              <button class="num-pad__button num-pad__numeric">6</button>
+              <button class="num-pad__button num-pad__numeric">7</button>
+              <button class="num-pad__button num-pad__numeric">8</button>
+              <button class="num-pad__button num-pad__numeric">9</button>
+              <button class="num-pad__button num-pad__clear">Clear</button>
+              <button class="num-pad__button num-pad__numeric">0</button>
+              <button class="num-pad__button num-pad__delete">Delete</button>
+              <button class="num-pad__button num-pad__submit" id="score-submit">Submit</button>
+            </div>
           </div>
+
+
           <div class="column column-three">
             <h5 class="player-name">Player 2</h5>
             <h2 id="secondPlayerScore" class="score">501</h2>
+            <div id="p2_score_history"></div>
           </div>
-        </div>
-     </div>
-    </div>
+
+      </div>
+
+  </div>
    <script src="./src/app.js"></script>
 </body>
 </html>

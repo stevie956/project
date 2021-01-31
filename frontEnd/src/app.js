@@ -7,9 +7,14 @@ $("body").prepend(createGameForm());
 let isFirstPlayerTurn = true;
 
 $("#js-start").on("click", function () {
-  var scoreColumns = $(".column-one");
-  scoreColumns.removeClass("column-three").find(".score").text("501");
-  scoreColumns.eq(0).addClass("column-three");
+  $('#firstPlayerScore').text("501");
+  $('#secondPlayerScore').text("501");
+  $('#p1_score_history')[0].innerHTML = "";
+  $('#p2_score_history')[0].innerHTML =  "";
+  
+  //var scoreColumns = $(".column-one");
+  //scoreColumns.removeClass("column-three").find(".score").text("501");
+  //scoreColumns.eq(0).addClass("column-three");
 });
 // tell display to show the value
 $(".num-pad__display").val("");
@@ -39,6 +44,10 @@ $(".num-pad__submit").on("click", function () {
     let firstPlayerCurrentScore = parseInt($("#firstPlayerScore").text());
     $("#firstPlayerScore").text(firstPlayerCurrentScore - score);
     isFirstPlayerTurn = false;
+
+
+
+
  //i had a problem where when scores were submitted it was substracting from both players simultaneously do needed the "else" statement
   } else {
   let secondPlayerCurrentScore = parseInt($("#secondPlayerScore").text());

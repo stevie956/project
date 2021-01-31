@@ -31,6 +31,7 @@ router.get("/scores/:matchId", (request, response) => {
     scoreModel.find({matchId: request.params.matchId})
       .then((scores) => {
         response.send(scores);
+        console.log("Score added");
       })
       .catch((error) => {
         console.log("error:", error);
@@ -40,10 +41,10 @@ router.get("/scores/:matchId", (request, response) => {
   
   // delete route
 router.delete("/delete-match/:matchId", (request, response) => {
-  matchModel.findByIdAndDelete(request.params.id)
+  matchModel.findByIdAndDelete(request.params.matchId)
     .then((data) => {
-      console.log("Delete successful!");
       response.send(data);
+      console.log("Delete successful!");
     })
     .catch(() => {
       console.log("Something went wrong!!");

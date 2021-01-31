@@ -58,6 +58,56 @@ function createGameForm() {
     window.alert("Game Created!");
    });
 
+  // Event listener to for Submit score Button
+  $(document).on("click", "#score-submit", async (e) => {
+    e.preventDefault();
+
+    // Construct body by extracting info from the form
+    const requestBody = {
+      score: $("#point").val()
+   };
+
+    // Make a POST request to the server to update score
+    const response = await $.ajax({
+      type: "POST",
+      url: `/api/match/score/${$("#matchId").val()}`,
+      contentType: "application/json",
+      data: JSON.stringify(requestBody)
+    });
+
+
+
+    // Make a POST request to the server to update score
+    const response2 = await $.ajax({
+      type: "GET",
+      url: `/api/match/scores/${$("#matchId").val()}`,
+      contentType: "application/json"
+    });
+
+    var scoreHist_p1 = "";
+    var scoreHist_p2 = "";
+
+    for (var i = 0; i < response2.length; i++)
+    {
+      if (i % 2 == 1)
+      {
+        scoreHist_p2 += response2[i].score + "<br/>";
+      }
+      else
+      {
+        scoreHist_p1 += response2[i].score + "<br/>";
+      }
+    }
+    //console.log(scoreHist);
+    $('#p1_score_history')[0].innerHTML = scoreHist_p1;
+    $('#p2_score_history')[0].innerHTML = scoreHist_p2;
+
+
+  });
+
+
+
+
    // listener for a delete game
   $(document).on("click", "#delete-match", async (e) => {
     e.preventDefault();
