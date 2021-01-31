@@ -37,6 +37,18 @@ router.get("/scores/:matchId", (request, response) => {
         response.status(500).send("cannot load scores");
       });
   });
-  //create players
+  
+  // delete route
+router.delete("/delete-match/:matchId", (request, response) => {
+  matchModel.findByIdAndDelete(request.params.id)
+    .then((data) => {
+      console.log("Delete successful!");
+      response.send(data);
+    })
+    .catch(() => {
+      console.log("Something went wrong!!");
+      response.status(404).send("match not found!!");
+    });
+});
 
 module.exports = router;

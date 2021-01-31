@@ -18,8 +18,8 @@ const form = `
     <label for="name">Nationality</label>
     <input type="text" class="form-control"  placeholder="Enter a players nationality" name="nationalityTwo">
     </div>
-    <button type="submit" id="create-match" class="btn btn-primary">Let'sPlay!</button>
-    
+    <button type="submit" id="create-match" class="btn btn-primary">Let's Play!</button>
+    <button type="button" id="delete-match" class="btn btn-primary">Delete Game</button>
 </form>
 `;
 //creating a get req
@@ -53,7 +53,21 @@ function createGameForm() {
     // Create a pop up alert in the UI to inform the user that game was created
     window.alert("Game Created!");
    });
-   
+
+   // listener for a delete game
+  $(document).on("click", "#delete-match", async (e) => {
+    e.preventDefault();
+
+    // Make a delete request to the server to delete match
+   const response = await $.ajax({
+    type: "DELETE",
+    url: `/api/match/delete-match/${$("#matchId").val()}`,
+    contentType: "application/json",
+    });
+    console.log("match deleted");
+    // Create a pop up alert in the UI to inform the user that the match was deleted
+    window.alert("Match Deleted!");
+  });
   return form;
 };
 
