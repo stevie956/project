@@ -23,6 +23,7 @@ const form = `
     <input type="text" class="form-control"  placeholder="Enter a players nationality" name="nationalityTwo">
     </div>
     <button type="submit" id="create-match" class="btn btn-primary">Let's Play!</button>
+    <button type="button" id="update-match" class="btn btn-primary">Update Game</button>
     <button type="button" id="delete-match" class="btn btn-primary">Delete Game</button>
 </form>
 `;
@@ -58,6 +59,30 @@ function createGameForm() {
     window.alert("Game Created!");
    });
 
+  // Event listener to for Update Match Button
+  $(document).on("click", "#update-match", async (e) => {
+    e.preventDefault();
+
+    // Construct body by extracting info from the form
+    const requestBody = {
+      nameOne: $("input[name='playerOne']").val(),
+      nationalityOne: $("input[name='nationalityOne']").val(),
+      nameTwo: $("input[name='playerTwo']").val(),
+      nationalityTwo: $("input[name='nationalityTwo']").val(),
+    };
+
+    // Make a PATCH request to the server to update a fruit
+    const response = await $.ajax({
+      type: "PATCH",
+      url: `/api/match/update-match/${$("#matchId").val()}`,
+      contentType: "application/json",
+      data: JSON.stringify(requestBody),
+    });
+
+    // Create a pop up alert in the UI to inform the user that fruit was updated
+    window.alert("Match Updated!");
+  });
+
   // Event listener to for Submit score Button
   $(document).on("click", "#score-submit", async (e) => {
     e.preventDefault();
@@ -73,6 +98,7 @@ function createGameForm() {
       url: `/api/match/score/${$("#matchId").val()}`,
       contentType: "application/json",
       data: JSON.stringify(requestBody)
+  
     });
 
 
@@ -105,10 +131,7 @@ function createGameForm() {
 
   });
 
-
-
-
-   // listener for a delete game
+  // listener for a delete game
   $(document).on("click", "#delete-match", async (e) => {
     e.preventDefault();
 

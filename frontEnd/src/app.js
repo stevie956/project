@@ -48,7 +48,7 @@ $(".num-pad__submit").on("click", function () {
 
 
 
- //i had a problem where when scores were submitted it was substracting from both players simultaneously do needed the "else" statement
+ //i had a problem where when scores were submitted it was substracting from both players simultaneously so needed the "else" statement
   } else {
   let secondPlayerCurrentScore = parseInt($("#secondPlayerScore").text());
   $("#secondPlayerScore").text(secondPlayerCurrentScore - score);

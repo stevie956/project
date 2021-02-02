@@ -38,7 +38,22 @@ router.get("/scores/:matchId", (request, response) => {
         response.status(500).send("cannot load scores");
       });
   });
-  
+  //update a match route
+ router.patch("/update-match/:matchId", (request, response) => {
+    matchModel.findByIdAndUpdate(request.params.id, request.body, {
+      new: true,
+      upsert: true,
+    })
+      .then((data) => {
+        response.send(data);
+        console.log("Update successful!");
+      })
+      .catch(() => {
+        console.log("Something went wrong!!");
+        response.status(404).send("match not found!!");
+      });
+  });
+
   // delete route
 router.delete("/delete-match/:matchId", (request, response) => {
   matchModel.findByIdAndDelete(request.params.matchId)
