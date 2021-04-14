@@ -45,10 +45,7 @@ $(".num-pad__submit").on("click", function () {
     $("#firstPlayerScore").text(firstPlayerCurrentScore - score);
     isFirstPlayerTurn = false;
 
-
-
-
- //i had a problem where when scores were submitted it was substracting from both players simultaneously so needed the "else" statement
+    //i had a problem where when scores were submitted it was substracting from both players simultaneously so needed the "else" statement
   } else {
   let secondPlayerCurrentScore = parseInt($("#secondPlayerScore").text());
   $("#secondPlayerScore").text(secondPlayerCurrentScore - score);

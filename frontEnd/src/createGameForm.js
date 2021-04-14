@@ -71,7 +71,7 @@ function createGameForm() {
       nationalityTwo: $("input[name='nationalityTwo']").val(),
     };
 
-    // Make a PATCH request to the server to update a fruit
+    // Make a PATCH request to the server to update a game
     const response = await $.ajax({
       type: "PATCH",
       url: `/api/match/update-match/${$("#matchId").val()}`,
@@ -79,7 +79,7 @@ function createGameForm() {
       data: JSON.stringify(requestBody),
     });
 
-    // Create a pop up alert in the UI to inform the user that fruit was updated
+    // Create a pop up alert in the UI to inform the user that game was updated
     window.alert("Match Updated!");
   });
 

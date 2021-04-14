@@ -8,7 +8,7 @@ const router = express.Router();
 // Add a health check for score routes
 router.get("/_health", (request, response) => {
     console.log("session:", request.session);
-    response.send("Darts routes work ok");
+    response.send("routes work ok");
 });
 //create a game
 router.post("/create", (request, response) => {
